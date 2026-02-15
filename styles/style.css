@@ -1,11 +1,9 @@
 @import "https://unpkg.com/open-props";
 @import "https://unpkg.com/open-props/normalize.min.css";
 
-/* ===== Глобальные стили ===== */
 :root {
     color-scheme: light dark;
     --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-    /* Голубо-зеленая тема */
     --primary: #14b8a6;
     --primary-light: #2dd4bf;
     --primary-dark: #0d9488;
@@ -15,11 +13,7 @@
     --surface-soft: light-dark(#f0fdfa, #2d2d3a);
     --text: light-dark(#0f172a, #f1f5f9);
     --text-muted: light-dark(#475569, #a0a3bd);
-
-    /* Высота хедера (будет обновляться через JS) */
     --header-height: 80px;
-
-    /* Цвета для тегов частей речи (сохранены оригинальные) */
     --tag-noun: #6366f1;
     --tag-noun-bg: rgba(99,102,241,0.1);
     --tag-verb: #22c55e;
@@ -28,12 +22,17 @@
     --tag-adjective-bg: rgba(249,115,22,0.1);
     --tag-adverb: #ef4444;
     --tag-adverb-bg: rgba(239,68,68,0.1);
+    --blur-6: 6px;
+    --blur-8: 8px;
+    --blur-12: 12px;
+    --blur-16: 16px;
+    --glass-bg-light: rgba(255, 255, 255, 0.7);
+    --glass-bg-dark: rgba(0, 0, 0, 0.6);
 }
 
-/* Исправление для html и body */
 html, body {
     width: 100%;
-    overflow-x: clip;  /* Используем clip вместо hidden для сохранения sticky */
+    overflow-x: clip;
     position: relative;
     height: auto;
     min-height: 100%;
@@ -71,9 +70,18 @@ h1, h2, h3 {
     letter-spacing: -0.02em;
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; }
-h3 { font-size: 1.5rem; }
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
 
 .section-title {
     text-align: center;
@@ -84,6 +92,7 @@ h3 { font-size: 1.5rem; }
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
 .section-title::after {
     content: '';
     display: block;
@@ -94,24 +103,28 @@ h3 { font-size: 1.5rem; }
     border-radius: 4px;
 }
 
-/* ===== Хедер и навигация ===== */
 .site-header {
-    background: light-dark(rgba(255,255,255,0.95), rgba(0,0,0,0.95));
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    background: light-dark(var(--glass-bg-light), var(--glass-bg-dark));
+    backdrop-filter: blur(var(--blur-12));
+    -webkit-backdrop-filter: blur(var(--blur-12));
+    box-shadow: var(--shadow-3);
+    border-bottom: 1px solid light-dark(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
     position: sticky;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
     z-index: 1000;
-    border-bottom: 1px solid light-dark(rgba(0,0,0,0.05), rgba(255,255,255,0.05));
     transition: all 0.3s ease;
-
-    /* Оптимизация для sticky */
     transform: translateZ(0);
     will-change: transform;
+}
+
+.site-header.scrolled {
+    background: light-dark(rgba(255, 255, 255, 0.85), rgba(0, 0, 0, 0.8));
+    backdrop-filter: blur(var(--blur-16));
+    -webkit-backdrop-filter: blur(var(--blur-16));
+    box-shadow: var(--shadow-4);
 }
 
 .nav-bar {
@@ -156,7 +169,6 @@ h3 { font-size: 1.5rem; }
     color: var(--primary);
 }
 
-/* ===== Футер ===== */
 .site-footer {
     background: light-dark(#ffffff, #1e1e2e);
     padding: 4rem 0;
@@ -188,7 +200,6 @@ h3 { font-size: 1.5rem; }
     color: var(--primary);
 }
 
-/* ===== Кнопки ===== */
 .button {
     display: inline-flex;
     align-items: center;
@@ -226,7 +237,6 @@ h3 { font-size: 1.5rem; }
     transform: translateY(-2px);
 }
 
-/* ===== Герой (главная страница) ===== */
 .hero-section {
     background: radial-gradient(circle at 70% 50%, light-dark(rgba(20,184,166,0.05), rgba(20,184,166,0.1)), transparent);
     padding: 6rem 0;
@@ -325,7 +335,6 @@ h3 { font-size: 1.5rem; }
     line-height: 1.6;
 }
 
-/* ===== Сетка карточек ===== */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -364,7 +373,6 @@ h3 { font-size: 1.5rem; }
     line-height: 1.6;
 }
 
-/* ===== Контактная форма ===== */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -478,7 +486,6 @@ h3 { font-size: 1.5rem; }
     transform: translateY(-3px);
 }
 
-/* ===== FAQ ===== */
 .accordion {
     max-width: 800px;
     margin: 0 auto;
@@ -534,7 +541,6 @@ details[open] .accordion-header::after {
     border-top: 1px solid light-dark(#e2e8f0, #2d2d3a);
 }
 
-/* ===== Таблица словаря ===== */
 .vocabulary-table {
     width: 100%;
     border-collapse: collapse;
@@ -565,7 +571,6 @@ details[open] .accordion-header::after {
     background: var(--surface-soft);
 }
 
-/* Теги для частей речи */
 .tag {
     display: inline-block;
     padding: 0.25rem 1rem;
@@ -596,7 +601,6 @@ details[open] .accordion-header::after {
     color: var(--tag-adverb);
 }
 
-/* Группы глаголов */
 .verb-group {
     background: var(--surface);
     border-radius: 32px;
@@ -616,7 +620,6 @@ details[open] .accordion-header::after {
     font-size: 1.3rem;
 }
 
-/* Вкладки для словаря */
 .vocabulary-tabs {
     display: flex;
     gap: 1rem;
@@ -657,14 +660,12 @@ details[open] .accordion-header::after {
     display: block;
 }
 
-/* Панель поиска */
 .search-bar {
     display: flex;
     gap: 0.5rem;
     margin-bottom: 1.5rem;
 }
 
-/* ===== Карточки (flashcards) ===== */
 .flashcard {
     height: 280px;
     cursor: pointer;
@@ -716,7 +717,6 @@ details[open] .accordion-header::after {
     transition: all 0.3s;
 }
 
-/* Фильтры для карточек */
 .filter-btn {
     background: var(--surface);
     color: var(--text);
@@ -739,7 +739,6 @@ details[open] .accordion-header::after {
     box-shadow: 0 4px 12px rgba(20, 184, 166, 0.2);
 }
 
-/* ===== 404 страница ===== */
 .error-page-body {
     display: flex;
     justify-content: center;
@@ -804,7 +803,6 @@ details[open] .accordion-header::after {
     color: var(--primary);
 }
 
-/* ===== Заголовки страниц ===== */
 .page-header {
     text-align: center;
     padding: 2rem 0 1rem;
@@ -831,7 +829,6 @@ details[open] .accordion-header::after {
     width: 100%;
 }
 
-/* Секции с отступами */
 .contact-page-section,
 .faq-section,
 .lessons-section,
@@ -839,7 +836,6 @@ details[open] .accordion-header::after {
     padding-top: 0 !important;
 }
 
-/* Уведомления */
 .notification {
     background: var(--surface);
     padding: 1.5rem;
@@ -858,7 +854,6 @@ details[open] .accordion-header::after {
     color: var(--primary);
 }
 
-/* Статистика на главной */
 .stats-grid {
     display: flex;
     justify-content: space-around;
@@ -880,7 +875,6 @@ details[open] .accordion-header::after {
     color: var(--text-muted);
 }
 
-/* Кнопки действий */
 .action-buttons {
     display: flex;
     gap: 1.5rem;
@@ -892,7 +886,6 @@ details[open] .accordion-header::after {
     min-width: 160px;
 }
 
-/* ===== Бургер-меню ===== */
 .menu-toggle {
     display: none;
     width: 30px;
@@ -968,15 +961,13 @@ details[open] .accordion-header::after {
     visibility: visible;
 }
 
-/* Исправление для открытого меню */
 body.menu-open {
     overflow: hidden;
-    position: relative;  /* Убрали fixed */
+    position: relative;
     width: 100%;
     height: 100%;
 }
 
-/* Фиксация хедера при открытом меню */
 body.menu-open .site-header {
     position: fixed;
     top: 0;
@@ -986,12 +977,10 @@ body.menu-open .site-header {
     z-index: 1000;
 }
 
-/* Отступ для контента при открытом меню */
 body.menu-open main {
     padding-top: var(--header-height);
 }
 
-/* Гарантия отсутствия горизонтального скролла для всех элементов */
 * {
     max-width: 100%;
     box-sizing: border-box;
@@ -1002,7 +991,6 @@ img, video, iframe, table, pre, code {
     height: auto;
 }
 
-/* Для таблиц добавляем горизонтальный скролл внутри, а не страницы */
 .vocabulary-table,
 .tense-table,
 .verb-group table {
@@ -1020,7 +1008,6 @@ img, video, iframe, table, pre, code {
     }
 }
 
-/* ===== Адаптивность для планшетов и мобильных ===== */
 @media (max-width: 992px) {
     .container {
         padding: 0 1.5rem;
@@ -1035,6 +1022,15 @@ img, video, iframe, table, pre, code {
         top: 0;
         width: 100%;
         z-index: 1000;
+        background: light-dark(rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.65));
+        backdrop-filter: blur(var(--blur-8));
+        -webkit-backdrop-filter: blur(var(--blur-8));
+    }
+
+    .site-header.scrolled {
+        background: light-dark(rgba(255, 255, 255, 0.85), rgba(0, 0, 0, 0.75));
+        backdrop-filter: blur(var(--blur-12));
+        -webkit-backdrop-filter: blur(var(--blur-12));
     }
 
     .nav-bar {
@@ -1061,7 +1057,9 @@ img, video, iframe, table, pre, code {
         width: 100%;
         max-width: 100%;
         height: 100vh;
-        background: var(--surface);
+        background: light-dark(rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.85));
+        backdrop-filter: blur(var(--blur-16));
+        -webkit-backdrop-filter: blur(var(--blur-16));
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -1212,6 +1210,12 @@ img, video, iframe, table, pre, code {
         padding: 0 1rem;
     }
 
+    .site-header {
+        background: light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
+        backdrop-filter: blur(var(--blur-6));
+        -webkit-backdrop-filter: blur(var(--blur-6));
+    }
+
     .nav-menu {
         padding: 4rem 1.5rem;
     }
@@ -1245,7 +1249,6 @@ img, video, iframe, table, pre, code {
     }
 }
 
-/* ===== Анимации ===== */
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
