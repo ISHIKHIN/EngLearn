@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Englearn | Словарь</title>
+    <link rel="stylesheet" href="https://unpkg.com/open-props/open-props.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+<header class="site-header">
+    <nav class="container nav-bar">
+        <div class="logo">Englearn</div>
+        <ul class="nav-menu">
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="vocabulary.html">Словарь</a></li>
+            <li><a href="flashcards.html">Карточки</a></li>
+            <li><a href="lessons.html">Уроки</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="page-header">
+        <div class="container">
+            <h1 class="section-title">Словарь английских слов</h1>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="vocabulary-tabs">
+            <button class="tab-btn active" onclick="switchTab('common')"> Обычные слова</button>
+            <button class="tab-btn" onclick="switchTab('intuitive')"> Интуитивно понятные</button>
+            <button class="tab-btn" onclick="switchTab('verbs')"> Правильные и неправильные глаголы</button>
+        </div>
+    </div>
+
+    <section id="common-section" class="vocabulary-section active">
+        <div class="container">
+            <div class="search-bar">
+                <input class="input" type="text" placeholder="Поиск слова или перевода..." id="commonSearch" style="flex: 1;">
+                <button class="button button-primary" onclick="searchInSection('common')"><i class="fas fa-search"></i></button>
+                <button class="button button-secondary" onclick="resetSearch('common')"><i class="fas fa-redo"></i></button>
+            </div>
+
+            <div style="overflow-x: auto;">
+                <table class="vocabulary-table" id="commonTable">
+                    <thead>
+                    <tr>
+                        <th>Английское слово</th>
+                        <th>Транскрипция</th>
+                        <th>Перевод</th>
+                        <th>Часть речи</th>
+                        <th>Пример</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><strong>Apple</strong></td>
+                        <td>/ˈæp.əl/</td>
+                        <td>Яблоко</td>
+                        <td><span class="tag tag-noun">Существительное</span></td>
+                        <td>I eat an apple every day.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Book</strong></td>
+                        <td>/bʊk/</td>
+                        <td>Книга</td>
+                        <td><span class="tag tag-noun">Существительное</span></td>
+                        <td>This book is interesting.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>House</strong></td>
+                        <td>/haʊs/</td>
+                        <td>Дом</td>
+                        <td><span class="tag tag-noun">Существительное</span></td>
+                        <td>My house is big.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Car</strong></td>
+                        <td>/kɑːr/</td>
+                        <td>Машина</td>
+                        <td><span class="tag tag-noun">Существительное</span></td>
+                        <td>I drive a red car.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Beautiful</strong></td>
+                        <td>/ˈbjuː.tɪ.fəl/</td>
+                        <td>Красивый</td>
+                        <td><span class="tag tag-adjective">Прилагательное</span></td>
+                        <td>The flowers are beautiful.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Happy</strong></td>
+                        <td>/ˈhæp.i/</td>
+                        <td>Счастливый</td>
+                        <td><span class="tag tag-adjective">Прилагательное</span></td>
+                        <td>I am happy today.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Big</strong></td>
+                        <td>/bɪɡ/</td>
+                        <td>Большой</td>
+                        <td><span class="tag tag-adjective">Прилагательное</span></td>
+                        <td>This is a big house.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Small</strong></td>
+                        <td>/smɔːl/</td>
+                        <td>Маленький</td>
+                        <td><span class="tag tag-adjective">Прилагательное</span></td>
+                        <td>I have a small car.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="intuitive-section" class="vocabulary-section">
+        <div class="container">
+            <div class="search-bar">
+                <input class="input" type="text" placeholder="Поиск слова или перевода..." id="intuitiveSearch" style="flex: 1;">
+                <button class="button button-primary" onclick="searchInSection('intuitive')"><i class="fas fa-search"></i></button>
+                <button class="button button-secondary" onclick="resetSearch('intuitive')"><i class="fas fa-redo"></i></button>
+            </div>
+
+            <div style="overflow-x: auto;">
+                <table class="vocabulary-table" id="intuitiveTable">
+                    <thead>
+                    <tr>
+                        <th>Английское слово</th>
+                        <th>Транскрипция</th>
+                        <th>Перевод</th>
+                        <th>Часть речи</th>
+                        <th>Пример</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><strong>Student</strong></td>
+                        <td>/ˈstjuː.dənt/</td>
+                        <td>Студент</td>
+                        <td><span class="tag tag-noun">Существительное</span></td>
+                        <td>I am a student.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Professor</strong></td>
+                        <td>/prəˈfes.ər/</td>
+                        <td>Профессор</td>
+                        <td><span class="tag tag-noun">Существительное</span></td>
+                        <td>The professor is kind.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Doctor</strong></td>
+                        <td>/ˈdɒk.tər/</td>
+                        <td>Доктор</td>
+                        <td><span class="tag tag-noun">Существительное</span></td>
+                        <td>The doctor helps people.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Director</strong></td>
+                        <td>/daɪˈrek.tər/</td>
+                        <td>Директор</td>
+                        <td><span class="tag tag-noun">Существительное</span></td>
+                        <td>He is the director.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Manager</strong></td>
+                        <td>/ˈmæn.ə.dʒər/</td>
+                        <td>Менеджер</td>
+                        <td><span class="tag tag-noun">Существительное</span></td>
+                        <td>She is a good manager.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Leader</strong></td>
+                        <td>/ˈliː.dər/</td>
+                        <td>Лидер</td>
+                        <td><span class="tag tag-noun">Существительное</span></td>
+                        <td>He is a natural leader.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Aggressive</strong></td>
+                        <td>/əˈɡres.ɪv/</td>
+                        <td>Агрессивный</td>
+                        <td><span class="tag tag-adjective">Прилагательное</span></td>
+                        <td>The dog is aggressive.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Active</strong></td>
+                        <td>/ˈæk.tɪv/</td>
+                        <td>Активный</td>
+                        <td><span class="tag tag-adjective">Прилагательное</span></td>
+                        <td>He is an active child.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Creative</strong></td>
+                        <td>/kriˈeɪ.tɪv/</td>
+                        <td>Креативный</td>
+                        <td><span class="tag tag-adjective">Прилагательное</span></td>
+                        <td>She is very creative.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Intelligent</strong></td>
+                        <td>/ɪnˈtel.ɪ.dʒənt/</td>
+                        <td>Интеллигентный</td>
+                        <td><span class="tag tag-adjective">Прилагательное</span></td>
+                        <td>He is an intelligent man.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Emotional</strong></td>
+                        <td>/ɪˈməʊ.ʃən.əl/</td>
+                        <td>Эмоциональный</td>
+                        <td><span class="tag tag-adjective">Прилагательное</span></td>
+                        <td>She is very emotional.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Formal</strong></td>
+                        <td>/ˈfɔː.məl/</td>
+                        <td>Формальный</td>
+                        <td><span class="tag tag-adjective">Прилагательное</span></td>
+                        <td>It was a formal event.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Inform</strong></td>
+                        <td>/ɪnˈfɔːm/</td>
+                        <td>Информировать</td>
+                        <td><span class="tag tag-verb">Глагол</span></td>
+                        <td>Please inform me.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Organize</strong></td>
+                        <td>/ˈɔː.ɡən.aɪz/</td>
+                        <td>Организовать</td>
+                        <td><span class="tag tag-verb">Глагол</span></td>
+                        <td>Let's organize a party.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Discuss</strong></td>
+                        <td>/dɪˈskʌs/</td>
+                        <td>Дискутировать</td>
+                        <td><span class="tag tag-verb">Глагол</span></td>
+                        <td>We need to discuss it.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Present</strong></td>
+                        <td>/prɪˈzent/</td>
+                        <td>Презентовать</td>
+                        <td><span class="tag tag-verb">Глагол</span></td>
+                        <td>He will present the project.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Demonstrate</strong></td>
+                        <td>/ˈdem.ən.streɪt/</td>
+                        <td>Демонстрировать</td>
+                        <td><span class="tag tag-verb">Глагол</span></td>
+                        <td>Let me demonstrate.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Connect</strong></td>
+                        <td>/kəˈnekt/</td>
+                        <td>Соединять</td>
+                        <td><span class="tag tag-verb">Глагол</span></td>
+                        <td>Connect the cables.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="verbs-section" class="vocabulary-section">
+        <div class="container">
+            <div class="search-bar">
+                <input class="input" type="text" placeholder="Поиск глагола..." id="verbsSearch" style="flex: 1;">
+                <button class="button button-primary" onclick="searchInSection('verbs')"><i class="fas fa-search"></i></button>
+                <button class="button button-secondary" onclick="resetSearch('verbs')"><i class="fas fa-redo"></i></button>
+            </div>
+
+            <div class="verb-group">
+                <h3>
+                    Правильные глаголы (Regular Verbs)
+                </h3>
+                <div style="overflow-x: auto;">
+                    <table class="vocabulary-table">
+                        <thead>
+                        <tr>
+                            <th>Infinitive</th>
+                            <th>Past Simple</th>
+                            <th>Past Participle</th>
+                            <th>Перевод</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr><td>Work</td><td>Worked</td><td>Worked</td><td>Работать</td></tr>
+                        <tr><td>Play</td><td>Played</td><td>Played</td><td>Играть</td></tr>
+                        <tr><td>Study</td><td>Studied</td><td>Studied</td><td>Учить(ся)</td></tr>
+                        <tr><td>Walk</td><td>Walked</td><td>Walked</td><td>Гулять</td></tr>
+                        <tr><td>Talk</td><td>Talked</td><td>Talked</td><td>Говорить</td></tr>
+                        <tr><td>Watch</td><td>Watched</td><td>Watched</td><td>Смотреть</td></tr>
+                        <tr><td>Listen</td><td>Listened</td><td>Listened</td><td>Слушать</td></tr>
+                        <tr><td>Help</td><td>Helped</td><td>Helped</td><td>Помогать</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="verb-group">
+                <h3>
+                    Неправильные глаголы (Irregular Verbs)
+                </h3>
+                <div style="overflow-x: auto;">
+                    <table class="vocabulary-table">
+                        <thead>
+                        <tr>
+                            <th>Infinitive</th>
+                            <th>Past Simple</th>
+                            <th>Past Participle</th>
+                            <th>Перевод</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr><td>Be</td><td>Was/Were</td><td>Been</td><td>Быть</td></tr>
+                        <tr><td>Have</td><td>Had</td><td>Had</td><td>Иметь</td></tr>
+                        <tr><td>Do</td><td>Did</td><td>Done</td><td>Делать</td></tr>
+                        <tr><td>Go</td><td>Went</td><td>Gone</td><td>Идти</td></tr>
+                        <tr><td>See</td><td>Saw</td><td>Seen</td><td>Видеть</td></tr>
+                        <tr><td>Come</td><td>Came</td><td>Come</td><td>Приходить</td></tr>
+                        <tr><td>Take</td><td>Took</td><td>Taken</td><td>Брать</td></tr>
+                        <tr><td>Get</td><td>Got</td><td>Got/Gotten</td><td>Получать</td></tr>
+                        <tr><td>Eat</td><td>Ate</td><td>Eaten</td><td>Есть</td></tr>
+                        <tr><td>Drink</td><td>Drank</td><td>Drunk</td><td>Пить</td></tr>
+                        <tr><td>Write</td><td>Wrote</td><td>Written</td><td>Писать</td></tr>
+                        <tr><td>Read</td><td>Read</td><td>Read</td><td>Читать</td></tr>
+                        <tr><td>Speak</td><td>Spoke</td><td>Spoken</td><td>Говорить</td></tr>
+                        <tr><td>Know</td><td>Knew</td><td>Known</td><td>Знать</td></tr>
+                        <tr><td>Think</td><td>Thought</td><td>Thought</td><td>Думать</td></tr>
+                        <tr><td>Buy</td><td>Bought</td><td>Bought</td><td>Покупать</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-content">
+        <p>© 2025 Englearn.</p>
+        <nav class="footer-nav">
+            <a href="../index.html">Главная</a>
+            <a href="vocabulary.html">Словарь</a>
+            <a href="flashcards.html">Карточки</a>
+            <a href="lessons.html">Уроки</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+    </div>
+</footer>
+
+<script>
+    function switchTab(tabName) {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        document.querySelectorAll('.vocabulary-section').forEach(section => {
+            section.classList.remove('active');
+        });
+
+        let sectionId = '';
+        switch(tabName) {
+            case 'common': sectionId = 'common-section'; break;
+            case 'intuitive': sectionId = 'intuitive-section'; break;
+            case 'verbs': sectionId = 'verbs-section'; break;
+        }
+        document.getElementById(sectionId).classList.add('active');
+    }
+
+    function searchInSection(section) {
+        const searchTerm = document.getElementById(section + 'Search').value.toLowerCase();
+
+        if (section === 'common') {
+            document.querySelectorAll('#commonTable tbody tr').forEach(row => {
+                row.style.display = row.textContent.toLowerCase().includes(searchTerm) ? '' : 'none';
+            });
+        } else if (section === 'intuitive') {
+            document.querySelectorAll('#intuitiveTable tbody tr').forEach(row => {
+                row.style.display = row.textContent.toLowerCase().includes(searchTerm) ? '' : 'none';
+            });
+        } else if (section === 'verbs') {
+            document.querySelectorAll('#verbs-section .vocabulary-table tbody tr').forEach(row => {
+                row.style.display = row.textContent.toLowerCase().includes(searchTerm) ? '' : 'none';
+            });
+        }
+    }
+
+    function resetSearch(section) {
+        document.getElementById(section + 'Search').value = '';
+        if (section === 'common') {
+            document.querySelectorAll('#commonTable tbody tr').forEach(row => row.style.display = '');
+        } else if (section === 'intuitive') {
+            document.querySelectorAll('#intuitiveTable tbody tr').forEach(row => row.style.display = '');
+        } else if (section === 'verbs') {
+            document.querySelectorAll('#verbs-section .vocabulary-table tbody tr').forEach(row => row.style.display = '');
+        }
+    }
+
+    document.getElementById('commonSearch')?.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') searchInSection('common');
+    });
+    document.getElementById('intuitiveSearch')?.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') searchInSection('intuitive');
+    });
+    document.getElementById('verbsSearch')?.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') searchInSection('verbs');
+    });
+
+    const currentPage = 'vocabulary.html';
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) link.classList.add('active');
+    });
+</script>
+</body>
+</html>

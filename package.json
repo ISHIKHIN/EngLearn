@@ -1,0 +1,15 @@
+{
+  "name": "englearn",
+  "version": "1.0.0",
+  "description": "Платформа для изучения английского языка на Open Props",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["english", "learning", "open-props", "css"],
+  "author": "Englearn Team",
+  "license": "MIT",
+  "dependencies": {
+    "open-props": "^1.7.23"
+  }
+}

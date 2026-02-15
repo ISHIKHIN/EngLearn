@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Englearn | FAQ</title>
+    <link rel="stylesheet" href="https://unpkg.com/open-props/open-props.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+<header class="site-header">
+    <nav class="container nav-bar">
+        <div class="logo">Englearn</div>
+        <ul class="nav-menu">
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="vocabulary.html">Словарь</a></li>
+            <li><a href="flashcards.html">Карточки</a></li>
+            <li><a href="lessons.html">Уроки</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="page-header">
+        <div class="container">
+            <h1 class="section-title">Часто задаваемые вопросы</h1>
+        </div>
+    </section>
+
+    <section class="faq-section fade-in">
+        <div class="container">
+            <div class="accordion">
+
+                <details class="accordion-item" open>
+                    <summary class="accordion-header">Как начать пользоваться сервисом?</summary>
+                    <div class="accordion-body">Зарегистрируйтесь на сайте, подтвердите email и начните пользоваться сервисом. Все функции доступны сразу после регистрации.</div>
+                </details>
+
+                <details class="accordion-item">
+                    <summary class="accordion-header">Как работают карточки для запоминания?</summary>
+                    <div class="accordion-body">Изучаете иностранное слово, читаете пример, переворачиваете карточку и смотрите перевод этого слова.</div>
+                </details>
+
+                <details class="accordion-item">
+                    <summary class="accordion-header">Как отслеживать свой прогресс?</summary>
+                    <div class="accordion-body">В личном кабинете доступна подробная статистика: изученные слова, пройденные уроки, достижения.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-content">
+        <p>© 2025 Englearn.</p>
+        <nav class="footer-nav">
+            <a href="../index.html">Главная</a>
+            <a href="vocabulary.html">Словарь</a>
+            <a href="flashcards.html">Карточки</a>
+            <a href="lessons.html">Уроки</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+    </div>
+</footer>
+
+<script>
+    const currentPage = 'faq.html';
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) link.classList.add('active');
+    });
+</script>
+</body>
+</html>

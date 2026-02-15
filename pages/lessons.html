@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Englearn | Уроки</title>
+    <link rel="stylesheet" href="https://unpkg.com/open-props/open-props.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+<header class="site-header">
+    <nav class="container nav-bar">
+        <div class="logo">Englearn</div>
+        <ul class="nav-menu">
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="vocabulary.html">Словарь</a></li>
+            <li><a href="flashcards.html">Карточки</a></li>
+            <li><a href="lessons.html">Уроки</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="page-header">
+        <div class="container">
+            <h1 class="section-title">Интерактивные уроки английского</h1>
+        </div>
+    </section>
+
+    <section class="lessons-section fade-in">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card" style="display: flex; flex-direction: column; height: 100%;">
+                    <h3>Урок 1: Приветствие</h3>
+                    <button class="button button-primary" style="margin-top: auto; width: 100%;" onclick="alert('Урок запущен! (демо-режим)')">Начать урок</button>
+                </div>
+                <div class="feature-card" style="display: flex; flex-direction: column; height: 100%;">
+                   <h3>Урок 2: Семья</h3>
+                    <button class="button button-primary" style="margin-top: auto; width: 100%;" onclick="alert('Урок запущен! (демо-режим)')">Начать урок</button>
+                </div>
+                <div class="feature-card" style="display: flex; flex-direction: column; height: 100%;">
+                    <h3>Урок 3: Еда и напитки</h3>
+                    <button class="button button-primary" style="margin-top: auto; width: 100%;" onclick="alert('Урок запущен! (демо-режим)')">Начать урок</button>
+                </div>
+                <div class="feature-card" style="display: flex; flex-direction: column; height: 100%;">
+                    <h3>Урок 4: Путешествия</h3>
+                    <button class="button button-primary" style="margin-top: auto; width: 100%;" onclick="alert('Урок запущен! (демо-режим)')">Начать урок</button>
+                </div>
+            </div>
+
+            <div class="notification">
+                <p>
+                    Раздел "Уроки" будет постепенно пополняться.
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-content">
+        <p>© 2025 Englearn.</p>
+        <nav class="footer-nav">
+            <a href="../index.html">Главная</a>
+            <a href="vocabulary.html">Словарь</a>
+            <a href="flashcards.html">Карточки</a>
+            <a href="lessons.html">Уроки</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+    </div>
+</footer>
+
+<script>
+    const currentPage = 'lessons.html';
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) link.classList.add('active');
+    });
+</script>
+</body>
+</html>
