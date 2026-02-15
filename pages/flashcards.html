@@ -1,251 +1,199 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Englearn | Карточки для запоминания</title>
-  <link rel="stylesheet" href="https://unpkg.com/open-props/open-props.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="../styles/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Englearn | Карточки для запоминания</title>
+    <link rel="stylesheet" href="https://unpkg.com/open-props/open-props.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
 <header class="site-header">
-  <nav class="container nav-bar">
-    <div class="logo">Englearn</div>
-    <ul class="nav-menu">
-      <li><a href="../index.html">Главная</a></li>
-      <li><a href="vocabulary.html">Словарь</a></li>
-      <li><a href="flashcards.html">Карточки</a></li>
-      <li><a href="lessons.html">Уроки</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="contacts.html">Контакты</a></li>
-    </ul>
-  </nav>
+    <nav class="container nav-bar">
+        <div class="logo">Englearn</div>
+        <button class="menu-toggle" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="vocabulary.html">Словарь</a></li>
+            <li><a href="flashcards.html">Карточки</a></li>
+            <li><a href="lessons.html">Уроки</a></li>
+            <li><a href="materials.html">Материалы</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="login.html">Войти</a></li>
+        </ul>
+    </nav>
 </header>
+<div class="overlay"></div>
 
 <main>
-  <section class="page-header">
-    <div class="container">
-      <h1 class="section-title">Карточки для запоминания слов</h1>
-      <p class="hero-subtitle" style="text-align: center;">Кликните на карточку, чтобы увидеть перевод</p>
-    </div>
-  </section>
+    <section class="page-header">
+        <div class="container">
+            <h1 class="section-title">Карточки для запоминания слов</h1>
+            <p class="hero-subtitle" style="text-align: center;">Кликните на карточку, чтобы увидеть перевод</p>
+        </div>
+    </section>
 
-  <section class="flashcards-section fade-in" style="padding-top: 0;">
-    <div class="container">
-      <div class="search-bar">
-        <input class="input" type="text" placeholder="Поиск слова..." id="cardSearch" style="flex: 1;">
-        <button class="button button-primary" onclick="searchCards()"><i class="fas fa-search"></i></button>
-        <button class="button button-secondary" onclick="resetCardSearch()"><i class="fas fa-redo"></i></button>
-      </div>
+    <section class="flashcards-section fade-in" style="padding-top: 0;">
+        <div class="container">
+            <div class="search-bar">
+                <input class="input" type="text" placeholder="Поиск слова..." id="cardSearch" style="flex: 1;">
+                <button class="button button-primary" onclick="searchCards()"><i class="fas fa-search"></i></button>
+                <button class="button button-secondary" onclick="resetCardSearch()"><i class="fas fa-redo"></i></button>
+            </div>
 
-      <div style="display: flex; gap: 0.75rem; justify-content: center; margin-bottom: 3rem; flex-wrap: wrap;">
-        <button class="filter-btn button-primary" data-filter="all" onclick="filterCards('all')">Все</button>
-        <button class="filter-btn" data-filter="noun" onclick="filterCards('noun')">Существительные</button>
-        <button class="filter-btn" data-filter="verb" onclick="filterCards('verb')">Глаголы</button>
-        <button class="filter-btn" data-filter="adjective" onclick="filterCards('adjective')">Прилагательные</button>
-        <button class="filter-btn" data-filter="adverb" onclick="filterCards('adverb')">Наречия</button>
-      </div>
+            <div style="display: flex; gap: 0.75rem; justify-content: center; margin-bottom: 3rem; flex-wrap: wrap;">
+                <button class="filter-btn button-primary" data-filter="all" onclick="filterCards('all')">Все</button>
+                <button class="filter-btn" data-filter="noun" onclick="filterCards('noun')">Существительные</button>
+                <button class="filter-btn" data-filter="verb" onclick="filterCards('verb')">Глаголы</button>
+                <button class="filter-btn" data-filter="adjective" onclick="filterCards('adjective')">Прилагательные</button>
+                <button class="filter-btn" data-filter="adverb" onclick="filterCards('adverb')">Наречия</button>
+            </div>
 
-      <div class="features-grid" id="flashcardsContainer">
-        <div class="flashcard-wrapper" data-category="noun">
-          <div class="flashcard">
-            <div class="front">
-              <p class="title" style="font-size: 2rem; font-weight: bold;">Apple</p>
-              <p style="color: var(--text-muted);">/ˈæp.əl/</p>
-              <span class="tag tag-noun">Существительное</span>
+            <div class="features-grid" id="flashcardsContainer">
+                <div class="flashcard-wrapper" data-category="noun">
+                    <div class="flashcard">
+                        <div class="front">
+                            <p class="title" style="font-size: 2rem; font-weight: bold;">Apple</p>
+                            <p style="color: var(--text-muted);">/ˈæp.əl/</p>
+                            <span class="tag tag-noun">Существительное</span>
+                        </div>
+                        <div class="back">
+                            <p class="title" style="font-size: 2rem; font-weight: bold;">Яблоко</p>
+                            <p style="margin-top: 1rem;">I eat an apple every day.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard-wrapper" data-category="noun">
+                    <div class="flashcard">
+                        <div class="front">
+                            <p class="title" style="font-size: 2rem; font-weight: bold;">Book</p>
+                            <p style="color: var(--text-muted);">/bʊk/</p>
+                            <span class="tag tag-noun">Существительное</span>
+                        </div>
+                        <div class="back">
+                            <p class="title" style="font-size: 2rem; font-weight: bold;">Книга</p>
+                            <p style="margin-top: 1rem;">This book is interesting.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard-wrapper" data-category="noun">
+                    <div class="flashcard">
+                        <div class="front">
+                            <p class="title" style="font-size: 2rem; font-weight: bold;">House</p>
+                            <p style="color: var(--text-muted);">/haʊs/</p>
+                            <span class="tag tag-noun">Существительное</span>
+                        </div>
+                        <div class="back">
+                            <p class="title" style="font-size: 2rem; font-weight: bold;">Дом</p>
+                            <p style="margin-top: 1rem;">My house is big.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard-wrapper" data-category="verb">
+                    <div class="flashcard">
+                        <div class="front">
+                            <p class="title" style="font-size: 2rem; font-weight: bold;">Learn</p>
+                            <p style="color: var(--text-muted);">/lɜːrn/</p>
+                            <span class="tag tag-verb">Глагол</span>
+                        </div>
+                        <div class="back">
+                            <p class="title" style="font-size: 2rem; font-weight: bold;">Учить</p>
+                            <p style="margin-top: 1rem;">I learn English.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard-wrapper" data-category="verb">
+                    <div class="flashcard">
+                        <div class="front">
+                            <p class="title" style="font-size: 2rem; font-weight: bold;">Run</p>
+                            <p style="color: var(--text-muted);">/rʌn/</p>
+                            <span class="tag tag-verb">Глагол</span>
+                        </div>
+                        <div class="back">
+                            <p class="title" style="font-size: 2rem; font-weight: bold;">Бежать</p>
+                            <p style="margin-top: 1rem;">I run every morning.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard-wrapper" data-category="adjective">
+                    <div class="flashcard">
+                        <div class="front">
+                            <p class="title" style="font-size: 2rem; font-weight: bold;">Happy</p>
+                            <p style="color: var(--text-muted);">/ˈhæp.i/</p>
+                            <span class="tag tag-adjective">Прилагательное</span>
+                        </div>
+                        <div class="back">
+                            <p class="title" style="font-size: 2rem; font-weight: bold;">Счастливый</p>
+                            <p style="margin-top: 1rem;">I am happy today.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard-wrapper" data-category="adjective">
+                    <div class="flashcard">
+                        <div class="front">
+                            <p class="title" style="font-size: 2rem; font-weight: bold;">Beautiful</p>
+                            <p style="color: var(--text-muted);">/ˈbjuː.tɪ.fəl/</p>
+                            <span class="tag tag-adjective">Прилагательное</span>
+                        </div>
+                        <div class="back">
+                            <p class="title" style="font-size: 2rem; font-weight: bold;">Красивый</p>
+                            <p style="margin-top: 1rem;">The flowers are beautiful.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard-wrapper" data-category="adverb">
+                    <div class="flashcard">
+                        <div class="front">
+                            <p class="title" style="font-size: 2rem; font-weight: bold;">Quickly</p>
+                            <p style="color: var(--text-muted);">/ˈkwɪk.li/</p>
+                            <span class="tag tag-adverb">Наречие</span>
+                        </div>
+                        <div class="back">
+                            <p class="title" style="font-size: 2rem; font-weight: bold;">Быстро</p>
+                            <p style="margin-top: 1rem;">He runs quickly.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="back">
-              <p class="title" style="font-size: 2rem; font-weight: bold;">Яблоко</p>
-              <p style="margin-top: 1rem;">I eat an apple every day.</p>
-            </div>
-          </div>
-        </div>
-        <div class="flashcard-wrapper" data-category="noun">
-          <div class="flashcard">
-            <div class="front">
-              <p class="title" style="font-size: 2rem; font-weight: bold;">Book</p>
-              <p style="color: var(--text-muted);">/bʊk/</p>
-              <span class="tag tag-noun">Существительное</span>
-            </div>
-            <div class="back">
-              <p class="title" style="font-size: 2rem; font-weight: bold;">Книга</p>
-              <p style="margin-top: 1rem;">This book is interesting.</p>
-            </div>
-          </div>
-        </div>
-        <div class="flashcard-wrapper" data-category="noun">
-          <div class="flashcard">
-            <div class="front">
-              <p class="title" style="font-size: 2rem; font-weight: bold;">House</p>
-              <p style="color: var(--text-muted);">/haʊs/</p>
-              <span class="tag tag-noun">Существительное</span>
-            </div>
-            <div class="back">
-              <p class="title" style="font-size: 2rem; font-weight: bold;">Дом</p>
-              <p style="margin-top: 1rem;">My house is big.</p>
-            </div>
-          </div>
-        </div>
-        <div class="flashcard-wrapper" data-category="verb">
-          <div class="flashcard">
-            <div class="front">
-              <p class="title" style="font-size: 2rem; font-weight: bold;">Learn</p>
-              <p style="color: var(--text-muted);">/lɜːrn/</p>
-              <span class="tag tag-verb">Глагол</span>
-            </div>
-            <div class="back">
-              <p class="title" style="font-size: 2rem; font-weight: bold;">Учить</p>
-              <p style="margin-top: 1rem;">I learn English.</p>
-            </div>
-          </div>
-        </div>
-        <div class="flashcard-wrapper" data-category="verb">
-          <div class="flashcard">
-            <div class="front">
-              <p class="title" style="font-size: 2rem; font-weight: bold;">Run</p>
-              <p style="color: var(--text-muted);">/rʌn/</p>
-              <span class="tag tag-verb">Глагол</span>
-            </div>
-            <div class="back">
-              <p class="title" style="font-size: 2rem; font-weight: bold;">Бежать</p>
-              <p style="margin-top: 1rem;">I run every morning.</p>
-            </div>
-          </div>
-        </div>
-        <div class="flashcard-wrapper" data-category="adjective">
-          <div class="flashcard">
-            <div class="front">
-              <p class="title" style="font-size: 2rem; font-weight: bold;">Happy</p>
-              <p style="color: var(--text-muted);">/ˈhæp.i/</p>
-              <span class="tag tag-adjective">Прилагательное</span>
-            </div>
-            <div class="back">
-              <p class="title" style="font-size: 2rem; font-weight: bold;">Счастливый</p>
-              <p style="margin-top: 1rem;">I am happy today.</p>
-            </div>
-          </div>
-        </div>
-        <div class="flashcard-wrapper" data-category="adjective">
-          <div class="flashcard">
-            <div class="front">
-              <p class="title" style="font-size: 2rem; font-weight: bold;">Beautiful</p>
-              <p style="color: var(--text-muted);">/ˈbjuː.tɪ.fəl/</p>
-              <span class="tag tag-adjective">Прилагательное</span>
-            </div>
-            <div class="back">
-              <p class="title" style="font-size: 2rem; font-weight: bold;">Красивый</p>
-              <p style="margin-top: 1rem;">The flowers are beautiful.</p>
-            </div>
-          </div>
-        </div>
-        <div class="flashcard-wrapper" data-category="adverb">
-          <div class="flashcard">
-            <div class="front">
-              <p class="title" style="font-size: 2rem; font-weight: bold;">Quickly</p>
-              <p style="color: var(--text-muted);">/ˈkwɪk.li/</p>
-              <span class="tag tag-adverb">Наречие</span>
-            </div>
-            <div class="back">
-              <p class="title" style="font-size: 2rem; font-weight: bold;">Быстро</p>
-              <p style="margin-top: 1rem;">He runs quickly.</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div style="margin-top: 4rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <button class="button button-primary" onclick="flipAllCards()">
-          <i class="fas fa-sync-alt"></i> Перевернуть все
-        </button>
-        <button class="button button-secondary" onclick="resetAllCards()">
-          <i class="fas fa-undo"></i> Сбросить все
-        </button>
-        <button class="button button-secondary" onclick="shuffleCards()">
-          <i class="fas fa-random"></i> Перемешать
-        </button>
-      </div>
-    </div>
-  </section>
+            <div style="margin-top: 4rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button class="button button-primary" onclick="flipAllCards()">
+                    <i class="fas fa-sync-alt"></i> Перевернуть все
+                </button>
+                <button class="button button-secondary" onclick="resetAllCards()">
+                    <i class="fas fa-undo"></i> Сбросить все
+                </button>
+                <button class="button button-secondary" onclick="shuffleCards()">
+                    <i class="fas fa-random"></i> Перемешать
+                </button>
+            </div>
+        </div>
+    </section>
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-content">
-    <p>© 2025 Englearn.</p>
-    <nav class="footer-nav">
-      <a href="../index.html">Главная</a>
-      <a href="vocabulary.html">Словарь</a>
-      <a href="flashcards.html">Карточки</a>
-      <a href="lessons.html">Уроки</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contacts.html">Контакты</a>
-    </nav>
-  </div>
+    <div class="container footer-content">
+        <p>2026 EngLearn.</p>
+        <nav class="footer-nav">
+            <a href="../index.html">Главная</a>
+            <a href="vocabulary.html">Словарь</a>
+            <a href="flashcards.html">Карточки</a>
+            <a href="lessons.html">Уроки</a>
+            <a href="materials.html">Материалы</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contacts.html">Контакты</a>
+            <a href="login.html">Войти</a>
+        </nav>
+    </div>
 </footer>
 
-<script>
-  function initFlashcards() {
-    document.querySelectorAll('.flashcard').forEach(card => {
-      card.addEventListener('click', function(e) {
-        e.stopPropagation();
-        this.classList.toggle('flipped');
-      });
-    });
-  }
-
-  function searchCards() {
-    const searchTerm = document.getElementById('cardSearch').value.toLowerCase();
-    document.querySelectorAll('.flashcard-wrapper').forEach(wrapper => {
-      const frontText = wrapper.querySelector('.front .title').textContent.toLowerCase();
-      wrapper.style.display = frontText.includes(searchTerm) ? 'block' : 'none';
-    });
-  }
-
-  function resetCardSearch() {
-    document.getElementById('cardSearch').value = '';
-    document.querySelectorAll('.flashcard-wrapper').forEach(w => w.style.display = 'block');
-    filterCards('all');
-  }
-
-  function filterCards(category) {
-    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('button-primary'));
-    document.querySelector(`.filter-btn[data-filter="${category}"]`).classList.add('button-primary');
-
-    document.querySelectorAll('.flashcard-wrapper').forEach(wrapper => {
-      wrapper.style.display = (category === 'all' || wrapper.dataset.category === category) ? 'block' : 'none';
-    });
-    document.getElementById('cardSearch').value = '';
-  }
-
-  function flipAllCards() {
-    document.querySelectorAll('.flashcard').forEach(card => card.classList.add('flipped'));
-  }
-
-  function resetAllCards() {
-    document.querySelectorAll('.flashcard').forEach(card => card.classList.remove('flipped'));
-  }
-
-  function shuffleCards() {
-    const container = document.getElementById('flashcardsContainer');
-    const cards = Array.from(container.children);
-    for (let i = cards.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      container.appendChild(cards[j]);
-    }
-  }
-
-  document.getElementById('cardSearch').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') searchCards();
-  });
-
-  initFlashcards();
-  filterCards('all');
-
-  const currentPage = 'flashcards.html';
-  document.querySelectorAll('.nav-menu a').forEach(link => {
-    if (link.getAttribute('href') === currentPage) link.classList.add('active');
-  });
-</script>
+<script src="../scripts/main.js"></script>
 </body>
 </html>

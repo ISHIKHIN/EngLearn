@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Englearn | Словарь</title>
     <link rel="stylesheet" href="https://unpkg.com/open-props/open-props.min.css">
     <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css">
@@ -13,16 +13,24 @@
 <header class="site-header">
     <nav class="container nav-bar">
         <div class="logo">Englearn</div>
+        <button class="menu-toggle" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <ul class="nav-menu">
             <li><a href="../index.html">Главная</a></li>
             <li><a href="vocabulary.html">Словарь</a></li>
             <li><a href="flashcards.html">Карточки</a></li>
             <li><a href="lessons.html">Уроки</a></li>
+            <li><a href="materials.html">Материалы</a></li>
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="login.html">Войти</a></li>
         </ul>
     </nav>
 </header>
+<div class="overlay"></div>
 
 <main>
     <section class="page-header">
@@ -33,9 +41,9 @@
 
     <div class="container">
         <div class="vocabulary-tabs">
-            <button class="tab-btn active" onclick="switchTab('common')"> Обычные слова</button>
-            <button class="tab-btn" onclick="switchTab('intuitive')"> Интуитивно понятные</button>
-            <button class="tab-btn" onclick="switchTab('verbs')"> Правильные и неправильные глаголы</button>
+            <button class="tab-btn active" onclick="switchTab('common')">Обычные слова</button>
+            <button class="tab-btn" onclick="switchTab('intuitive')">Интуитивно понятные</button>
+            <button class="tab-btn" onclick="switchTab('verbs')">Правильные и неправильные глаголы</button>
         </div>
     </div>
 
@@ -350,79 +358,20 @@
 
 <footer class="site-footer">
     <div class="container footer-content">
-        <p>© 2025 Englearn.</p>
+        <p>2026 EngLearn.</p>
         <nav class="footer-nav">
             <a href="../index.html">Главная</a>
             <a href="vocabulary.html">Словарь</a>
             <a href="flashcards.html">Карточки</a>
             <a href="lessons.html">Уроки</a>
+            <a href="materials.html">Материалы</a>
             <a href="faq.html">FAQ</a>
             <a href="contacts.html">Контакты</a>
+            <a href="login.html">Войти</a>
         </nav>
     </div>
 </footer>
 
-<script>
-    function switchTab(tabName) {
-        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-        event.target.classList.add('active');
-
-        document.querySelectorAll('.vocabulary-section').forEach(section => {
-            section.classList.remove('active');
-        });
-
-        let sectionId = '';
-        switch(tabName) {
-            case 'common': sectionId = 'common-section'; break;
-            case 'intuitive': sectionId = 'intuitive-section'; break;
-            case 'verbs': sectionId = 'verbs-section'; break;
-        }
-        document.getElementById(sectionId).classList.add('active');
-    }
-
-    function searchInSection(section) {
-        const searchTerm = document.getElementById(section + 'Search').value.toLowerCase();
-
-        if (section === 'common') {
-            document.querySelectorAll('#commonTable tbody tr').forEach(row => {
-                row.style.display = row.textContent.toLowerCase().includes(searchTerm) ? '' : 'none';
-            });
-        } else if (section === 'intuitive') {
-            document.querySelectorAll('#intuitiveTable tbody tr').forEach(row => {
-                row.style.display = row.textContent.toLowerCase().includes(searchTerm) ? '' : 'none';
-            });
-        } else if (section === 'verbs') {
-            document.querySelectorAll('#verbs-section .vocabulary-table tbody tr').forEach(row => {
-                row.style.display = row.textContent.toLowerCase().includes(searchTerm) ? '' : 'none';
-            });
-        }
-    }
-
-    function resetSearch(section) {
-        document.getElementById(section + 'Search').value = '';
-        if (section === 'common') {
-            document.querySelectorAll('#commonTable tbody tr').forEach(row => row.style.display = '');
-        } else if (section === 'intuitive') {
-            document.querySelectorAll('#intuitiveTable tbody tr').forEach(row => row.style.display = '');
-        } else if (section === 'verbs') {
-            document.querySelectorAll('#verbs-section .vocabulary-table tbody tr').forEach(row => row.style.display = '');
-        }
-    }
-
-    document.getElementById('commonSearch')?.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') searchInSection('common');
-    });
-    document.getElementById('intuitiveSearch')?.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') searchInSection('intuitive');
-    });
-    document.getElementById('verbsSearch')?.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') searchInSection('verbs');
-    });
-
-    const currentPage = 'vocabulary.html';
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        if (link.getAttribute('href') === currentPage) link.classList.add('active');
-    });
-</script>
+<script src="../scripts/main.js"></script>
 </body>
 </html>

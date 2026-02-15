@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Englearn | Материалы</title>
+    <link rel="stylesheet" href="https://unpkg.com/open-props/open-props.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <style>
+        .tense-card {
+            background: var(--surface);
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid light-dark(rgba(0,0,0,0.05), rgba(255,255,255,0.05));
+            box-shadow: 0 10px 30px light-dark(rgba(0,0,0,0.05), rgba(0,0,0,0.3));
+        }
+
+        .tense-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tense-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .tense-table th {
+            background: var(--surface-soft);
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-muted);
+            border-bottom: 2px solid light-dark(#e2e8f0, #2d2d3a);
+        }
+
+        .tense-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid light-dark(#e2e8f0, #2d2d3a);
+            color: var(--text);
+        }
+
+        .tense-table tr:hover {
+            background: var(--surface-soft);
+        }
+
+        .example-highlight {
+            background: var(--primary-light);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .material-note {
+            background: linear-gradient(135deg, rgba(20,184,166,0.1), rgba(8,145,178,0.1));
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <nav class="container nav-bar">
+        <div class="logo">Englearn</div>
+        <button class="menu-toggle" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="vocabulary.html">Словарь</a></li>
+            <li><a href="flashcards.html">Карточки</a></li>
+            <li><a href="lessons.html">Уроки</a></li>
+            <li><a href="materials.html">Материалы</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="login.html">Войти</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="overlay"></div>
+
+<main>
+    <section class="page-header">
+        <div class="container">
+            <h1 class="section-title">Учебные материалы</h1>
+            <p class="hero-subtitle" style="text-align: center;">Правила, таблицы и полезная информация для изучения английского</p>
+        </div>
+    </section>
+
+    <section class="materials-section fade-in">
+        <div class="container">
+            <h2 style="margin-bottom: 2rem;">Базовые времена</h2>
+
+            <div class="tense-card">
+                <h3>Present Simple (Настоящее простое время)</h3>
+                <p><strong>Употребление:</strong> Факты, привычки, регулярные действия, расписания.</p>
+                <table class="tense-table">
+                    <thead>
+                    <tr>
+                        <th>Тип предложения</th>
+                        <th>Формула</th>
+                        <th>Пример</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Утверждение</td>
+                        <td>I/You/We/They + V1<br>He/She/It + V1 + (e)s</td>
+                        <td><span class="example-highlight">I work</span> every day.<br><span class="example-highlight">She works</span> every day.</td>
+                    </tr>
+                    <tr>
+                        <td>Отрицание</td>
+                        <td>I/You/We/They + do not (don't) + V1<br>He/She/It + does not (doesn't) + V1</td>
+                        <td><span class="example-highlight">I don't work</span> on Sundays.<br><span class="example-highlight">He doesn't work</span> on Sundays.</td>
+                    </tr>
+                    <tr>
+                        <td>Вопрос</td>
+                        <td>Do + I/you/we/they + V1?<br>Does + he/she/it + V1?</td>
+                        <td><span class="example-highlight">Do you work</span> here?<br><span class="example-highlight">Does she work</span> here?</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p><strong>Слова-маркеры:</strong> always, usually, often, sometimes, never, every day/week/month</p>
+            </div>
+
+            <div class="tense-card">
+                <h3>Past Simple (Прошедшее простое время)</h3>
+                <p><strong>Употребление:</strong> Завершенные действия в прошлом, последовательность событий в прошлом.</p>
+                <table class="tense-table">
+                    <thead>
+                    <tr>
+                        <th>Тип предложения</th>
+                        <th>Формула</th>
+                        <th>Пример</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Утверждение</td>
+                        <td>V2 (правильные: V+ed / неправильные: 2 форма)</td>
+                        <td><span class="example-highlight">I worked</span> yesterday.<br><span class="example-highlight">She went</span> to London.</td>
+                    </tr>
+                    <tr>
+                        <td>Отрицание</td>
+                        <td>did not (didn't) + V1</td>
+                        <td><span class="example-highlight">I didn't work</span> yesterday.<br><span class="example-highlight">She didn't go</span> to London.</td>
+                    </tr>
+                    <tr>
+                        <td>Вопрос</td>
+                        <td>Did + подлежащее + V1?</td>
+                        <td><span class="example-highlight">Did you work</span> yesterday?<br><span class="example-highlight">Did she go</span> to London?</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p><strong>Слова-маркеры:</strong> yesterday, last week/month/year, in 2020, ago</p>
+            </div>
+
+            <div class="tense-card">
+                <h3>Future Simple (Будущее простое время)</h3>
+                <p><strong>Употребление:</strong> Решения, принятые в момент речи, предсказания, обещания, спонтанные действия.</p>
+                <table class="tense-table">
+                    <thead>
+                    <tr>
+                        <th>Тип предложения</th>
+                        <th>Формула</th>
+                        <th>Пример</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Утверждение</td>
+                        <td>will + V1</td>
+                        <td><span class="example-highlight">I will call</span> you tomorrow.<br><span class="example-highlight">She will come</span> later.</td>
+                    </tr>
+                    <tr>
+                        <td>Отрицание</td>
+                        <td>will not (won't) + V1</td>
+                        <td><span class="example-highlight">I won't be</span> late.<br><span class="example-highlight">She won't come</span> to the party.</td>
+                    </tr>
+                    <tr>
+                        <td>Вопрос</td>
+                        <td>Will + подлежащее + V1?</td>
+                        <td><span class="example-highlight">Will you come</span> to the party?<br><span class="example-highlight">Will she call</span> me?</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p><strong>Слова-маркеры:</strong> tomorrow, next week/month/year, soon, in the future</p>
+            </div>
+
+            <div class="notification">
+                <p>
+                    Раздел "Материалы" будет постепенно пополняться.
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-content">
+        <p>2026 EngLearn.</p>
+        <nav class="footer-nav">
+            <a href="../index.html">Главная</a>
+            <a href="vocabulary.html">Словарь</a>
+            <a href="flashcards.html">Карточки</a>
+            <a href="lessons.html">Уроки</a>
+            <a href="materials.html">Материалы</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contacts.html">Контакты</a>
+            <a href="login.html">Войти</a>
+        </nav>
+    </div>
+</footer>
+
+<script src="../scripts/main.js"></script>
+</body>
+</html>

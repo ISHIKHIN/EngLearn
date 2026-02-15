@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Englearn | Контакты</title>
   <link rel="stylesheet" href="https://unpkg.com/open-props/open-props.min.css">
   <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css">
@@ -13,30 +13,37 @@
 <header class="site-header">
   <nav class="container nav-bar">
     <div class="logo">Englearn</div>
+    <button class="menu-toggle" aria-label="Меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <ul class="nav-menu">
       <li><a href="../index.html">Главная</a></li>
       <li><a href="vocabulary.html">Словарь</a></li>
       <li><a href="flashcards.html">Карточки</a></li>
       <li><a href="lessons.html">Уроки</a></li>
+      <li><a href="materials.html">Материалы</a></li>
       <li><a href="faq.html">FAQ</a></li>
       <li><a href="contacts.html">Контакты</a></li>
+      <li><a href="login.html">Войти</a></li>
     </ul>
   </nav>
 </header>
+<div class="overlay"></div>
 
 <main>
-    <section class="page-header">
-      <div class="container">
-        <h1 class="section-title">Контакты и обратная связь</h1>
-      </div>
-    </section>
-  </div>
+  <section class="page-header">
+    <div class="container">
+      <h1 class="section-title">Контакты и обратная связь</h1>
+    </div>
+  </section>
 
   <section class="contact-page-section fade-in">
     <div class="container">
       <div class="contact-grid">
         <div class="contact-form">
-          <form id="feedbackForm" onsubmit="event.preventDefault(); alert('Спасибо! Ваше сообщение отправлено (демо-режим).');">
+          <form id="feedbackForm">
             <div class="field">
               <label class="label" for="name">Имя</label>
               <input class="input" type="text" id="name" placeholder="Ваше имя" required>
@@ -77,7 +84,6 @@
             <a href="#"><i class="fab fa-telegram fa-2x"></i></a>
             <a href="#"><i class="fab fa-vk fa-2x"></i></a>
           </div>
-
         </div>
       </div>
     </div>
@@ -86,23 +92,20 @@
 
 <footer class="site-footer">
   <div class="container footer-content">
-    <p>© 2025 Englearn.</p>
+    <p>2026 EngLearn.</p>
     <nav class="footer-nav">
       <a href="../index.html">Главная</a>
       <a href="vocabulary.html">Словарь</a>
       <a href="flashcards.html">Карточки</a>
       <a href="lessons.html">Уроки</a>
+      <a href="materials.html">Материалы</a>
       <a href="faq.html">FAQ</a>
       <a href="contacts.html">Контакты</a>
+      <a href="login.html">Войти</a>
     </nav>
   </div>
 </footer>
 
-<script>
-  const currentPage = 'contacts.html';
-  document.querySelectorAll('.nav-menu a').forEach(link => {
-    if (link.getAttribute('href') === currentPage) link.classList.add('active');
-  });
-</script>
+<script src="../scripts/main.js"></script>
 </body>
 </html>
