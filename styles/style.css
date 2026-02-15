@@ -16,6 +16,9 @@
     --text: light-dark(#0f172a, #f1f5f9);
     --text-muted: light-dark(#475569, #a0a3bd);
 
+    /* Высота хедера (будет обновляться через JS) */
+    --header-height: 80px;
+
     /* Цвета для тегов частей речи (сохранены оригинальные) */
     --tag-noun: #6366f1;
     --tag-noun-bg: rgba(99,102,241,0.1);
@@ -25,6 +28,17 @@
     --tag-adjective-bg: rgba(249,115,22,0.1);
     --tag-adverb: #ef4444;
     --tag-adverb-bg: rgba(239,68,68,0.1);
+}
+
+/* Исправление для html и body */
+html, body {
+    width: 100%;
+    overflow-x: clip;  /* Используем clip вместо hidden для сохранения sticky */
+    position: relative;
+    height: auto;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -88,9 +102,16 @@ h3 { font-size: 1.5rem; }
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     z-index: 1000;
     border-bottom: 1px solid light-dark(rgba(0,0,0,0.05), rgba(255,255,255,0.05));
     transition: all 0.3s ease;
+
+    /* Оптимизация для sticky */
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 .nav-bar {
@@ -947,24 +968,27 @@ details[open] .accordion-header::after {
     visibility: visible;
 }
 
-/* Запрет горизонтального скролла для всех устройств */
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-    position: relative;
-    height: auto;
-    min-height: 100%;
-}
-
-/* Блокируем прокрутку body при открытом меню */
+/* Исправление для открытого меню */
 body.menu-open {
     overflow: hidden;
-    position: fixed;
+    position: relative;  /* Убрали fixed */
     width: 100%;
     height: 100%;
+}
+
+/* Фиксация хедера при открытом меню */
+body.menu-open .site-header {
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Отступ для контента при открытом меню */
+body.menu-open main {
+    padding-top: var(--header-height);
 }
 
 /* Гарантия отсутствия горизонтального скролла для всех элементов */
