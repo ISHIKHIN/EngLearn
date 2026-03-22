@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 function HeroSection() {
     return (
@@ -7,7 +6,15 @@ function HeroSection() {
             <div className="container">
                 <div className="hero-flex-container">
                     <div className="hero-image">
-                        <img src="/EngLearn/images/friend.jpg" alt="Друзья учат английский" loading="lazy" />
+                        <img
+                            src="/EngLearn/images/friend.jpg"
+                            alt="Друзья учат английский"
+                            loading="lazy"
+                            onError={(e) => {
+                                e.target.onerror = null;
+                                e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"%3E%3Cpath d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"%3E%3C/path%3E%3Ccircle cx="12" cy="12" r="3"%3E%3C/circle%3E%3C/svg%3E';
+                            }}
+                        />
                     </div>
                     <div className="hero-cards-container">
                         <div className="hero-card">
