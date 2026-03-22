@@ -1,6 +1,6 @@
 {
   "name": "englearn",
-  "homepage": "https://ishikhin.github.io/dpo_react_app",
+  "homepage": "https://ishikhin.github.io/EngLearn",
   "version": "1.0.0",
   "description": "Платформа для изучения английского языка на Open Props + React",
   "main": "index.html",
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.1",
+    "gh-pages": "^6.3.0",
     "vite": "^8.0.1"
   }
 }
