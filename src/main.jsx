@@ -4,11 +4,12 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import '../styles/style.css'
 
+// Базовая директория для GitHub Pages
 const basename = import.meta.env.BASE_URL || '/'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <BrowserRouter>
+        <BrowserRouter basename={basename}>
             <App />
         </BrowserRouter>
     </React.StrictMode>

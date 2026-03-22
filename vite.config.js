@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
     plugins: [react()],
-    base: '/EngLearn/',
+    base: '/EngLearn/', // Важно: имя репозитория
     server: {
         port: 3000,
         open: true
@@ -11,15 +11,13 @@ export default defineConfig({
     build: {
         outDir: 'dist',
         assetsDir: 'assets',
+        sourcemap: false,
         rollupOptions: {
-            input: {
-                main: './index.html'
+            output: {
+                manualChunks: {
+                    vendor: ['react', 'react-dom', 'react-router-dom']
+                }
             }
-        }
-    },
-    resolve: {
-        alias: {
-            '@': '/src'
         }
     }
 })
