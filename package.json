@@ -1,15 +1,34 @@
 {
   "name": "englearn",
+  "homepage": "https://ishikhin.github.io/dpo_react_app",
   "version": "1.0.0",
-  "description": "Платформа для изучения английского языка на Open Props",
+  "description": "Платформа для изучения английского языка на Open Props + React",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
-  "keywords": ["english", "learning", "open-props", "css"],
+  "keywords": [
+    "english",
+    "learning",
+    "open-props",
+    "css",
+    "react"
+  ],
   "author": "Englearn Team",
   "license": "MIT",
   "dependencies": {
-    "open-props": "^1.7.23"
+    "open-props": "^1.7.23",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-router-dom": "^7.13.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.0.1"
   }
 }
