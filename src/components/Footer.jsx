@@ -9,6 +9,7 @@ function Footer() {
         { path: '/flashcards', label: 'Карточки' },
         { path: '/vocabulary', label: 'Словарь' },
         { path: '/materials', label: 'Материалы' },
+        { path: '/lessons', label: 'Уроки' },
         { path: '/faq', label: 'FAQ' },
         { path: '/contacts', label: 'Контакты' },
         { path: '/login', label: 'Войти' }

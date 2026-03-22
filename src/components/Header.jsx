@@ -24,6 +24,7 @@ function Header() {
         { path: '/flashcards', label: 'Карточки', icon: 'fas fa-layer-group' },
         { path: '/vocabulary', label: 'Словарь', icon: 'fas fa-book' },
         { path: '/materials', label: 'Материалы', icon: 'fas fa-graduation-cap' },
+        { path: '/lessons', label: 'Уроки', icon: 'fas fa-chalkboard-user' },
         { path: '/faq', label: 'FAQ', icon: 'fas fa-question-circle' },
         { path: '/contacts', label: 'Контакты', icon: 'fas fa-envelope' },
         { path: '/login', label: 'Войти', icon: 'fas fa-user' }

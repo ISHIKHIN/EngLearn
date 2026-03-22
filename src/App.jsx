@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage'
 import FlashcardsPage from './pages/FlashcardsPage'
 import VocabularyPage from './pages/VocabularyPage'
 import MaterialsPage from './pages/MaterialsPage'
+import LessonsPage from './pages/LessonsPage'
 import FAQPage from './pages/FAQPage'
 import ContactsPage from './pages/ContactsPage'
 import LoginPage from './pages/LoginPage'
@@ -20,6 +21,7 @@ function App() {
         if (path === '/flashcards') return 'flashcards'
         if (path === '/vocabulary') return 'vocabulary'
         if (path === '/materials') return 'materials'
+        if (path === '/lessons') return 'lessons'
         if (path === '/faq') return 'faq'
         if (path === '/contacts') return 'contacts'
         if (path === '/login') return 'login'
@@ -37,6 +39,7 @@ function App() {
                     <Route path="/vocabulary" element={<VocabularyPage />} />
                     <Route path="/materials" element={<MaterialsPage />} />
                     <Route path="/faq" element={<FAQPage />} />
+                    <Route path="/lessons" element={<LessonsPage />} />
                     <Route path="/contacts" element={<ContactsPage />} />
                     <Route path="/login" element={<LoginPage />} />
                 </Routes>
