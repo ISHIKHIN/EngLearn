@@ -7,7 +7,7 @@ function HeroSection() {
             <div className="container">
                 <div className="hero-flex-container">
                     <div className="hero-image">
-                        <img src="/images/friend.jpg" alt="Друзья учат английский" loading="lazy" />
+                        <img src="/EngLearn/images/friend.jpg" alt="Друзья учат английский" loading="lazy" />
                     </div>
                     <div className="hero-cards-container">
                         <div className="hero-card">
